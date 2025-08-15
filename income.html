@@ -1,0 +1,223 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustDollar – Monthly Compounding Income</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom right, #8b0000, #ffd700);
+        margin: 0; padding: 0;
+        color: white;
+    }
+    .container {
+        width: 95%;
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .section-title {
+        background: linear-gradient(to right, #8b0000, #d2691e);
+        color: gold;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border-bottom: 3px solid gold;
+        text-shadow: 1px 1px 2px black;
+        display: inline-block;
+    }
+    .btn-3d {
+        background: linear-gradient(to bottom, gold, goldenrod);
+        color: #8b0000;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px #b8860b;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        margin-bottom: 15px;
+    }
+    .btn-3d:active {
+        box-shadow: 0 2px #b8860b;
+        transform: translateY(3px);
+    }
+    .income-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .info-box {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 15px;
+        flex: 1;
+        min-width: 250px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .info-box h2 {
+        color: gold;
+        margin-bottom: 8px;
+    }
+    /* Referral Section */
+    .referral-section {
+        display: none;
+        background: rgba(255,255,255,0.08);
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .referral-section h2 {
+        color: gold;
+        margin-bottom: 10px;
+    }
+    .referral-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .referral-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .referral-card h3 {
+        color: gold;
+        margin-bottom: 10px;
+    }
+    .referral-card p {
+        margin: 5px 0;
+        font-size: 0.95rem;
+    }
+    .btn-3d {
+        background: linear-gradient(to bottom, gold, goldenrod);
+        color: #8b0000;
+        padding: 10px 20px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px #b8860b;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .btn-3d:active {
+        box-shadow: 0 2px #b8860b;
+        transform: translateY(3px);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-3d">Back</a>
+    <h1 class="section-title">Monthly Compounding Income</h1>
+    <br>
+    <button class="btn-3d" onclick="showIncome()">Income Info</button>
+    <button class="btn-3d" onclick="showReferral()">Referral Info</button>
+
+    <div id="incomeSection" class="income-boxes">
+        <div class="info-box">
+            <h2>Starting: $170</h2>
+            <p>Final after 30 days: <strong>$229.13</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$59.13</strong></span></p>
+        </div>
+        <div class="info-box">
+            <h2>Starting: $500</h2>
+            <p>Final after 30 days: <strong>$673.92</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$173.92</strong></span></p>
+        </div>
+        <div class="info-box">
+            <h2>Starting: $2000</h2>
+            <p>Final after 30 days: <strong>$2695.70</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$695.70</strong></span></p>
+        </div>
+        <div class="info-box">
+            <h2>Starting: $5000</h2>
+            <p>Final after 30 days: <strong>$6739.24</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$1739.24</strong></span></p>
+        </div>
+        <div class="info-box">
+            <h2>Starting: $10000</h2>
+            <p>Final after 30 days: <strong>$13478.49</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$3478.49</strong></span></p>
+        </div>
+        <div class="info-box">
+            <h2>Starting: $20000</h2>
+            <p>Final after 30 days: <strong>$26956.97</strong></p>
+            <p>Profit: <span style="color:lightgreen;"><strong>$6956.97</strong></span></p>
+        </div>
+    </div>
+
+    <div id="referralSection" class="referral-section">
+        <h2>Referral Program</h2>
+        <p>If your referral makes their first deposit, you will instantly get a <strong>20% bonus</strong> of that amount, plus <strong>10% of their daily income</strong> every day.</p>
+        <div class="referral-grid">
+            <div class="referral-card">
+                <h3>$170</h3>
+                <p><strong>FBonus: Upline 20% </strong> $34.00</p>
+                <p><strong> User Monthly Income:</strong> $59.13</p>
+                <p><strong>Upline Earnings:</strong> $5.913</p>
+            </div>
+            <div class="referral-card">
+                <h3>$500</h3>
+                <p><strong>FBonus: Upline 20</strong> $100.00</p>
+                <p><strong> User Monthly Income:</strong> $173.92</p>
+                <p><strong>Upline Earnings:</strong> $17.392</p>
+            </div>
+            
+            <div class="referral-card">
+                <h3>$2000</h3>
+                <p><strong>FBonus: Upline 20</strong> $400.00</p>
+                <p><strong> User Monthly Income:</strong> $695.70</p>
+                <p><strong>Upline Earnings:</strong> $69.57</p>
+            </div>
+            <div class="referral-card">
+                <h3>$5000</h3>
+                <p><strong>FBonus: Upline 20</strong> $1000.00</p>
+                <p><strong> User Monthly Income:</strong> $1739.24</p>
+                <p><strong>Upline Earnings:</strong> $173.949</p>
+            </div>
+            <div class="referral-card">
+                <h3>$10000</h3>
+                <p><strong>FBonus: Upline 20</strong> $2000.00</p>
+                <p><strong> User Monthly Income:</strong> $3478.49</p>
+                <p><strong>Upline Earnings:</strong> $347.849</p>
+            </div>
+            <div class="referral-card">
+                <h3>$20000</h3>
+                <p><strong>FBonus: Upline 20</strong> $4000.00</p>
+                <p><strong> User Monthly Income:</strong> $6956.97</p>
+                <p><strong>Upline Earnings:</strong> $695.697</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showReferral() {
+        document.getElementById("incomeSection").style.display = "none";
+        document.getElementById("referralSection").style.display = "block";
+    }
+    function showIncome() {
+        document.getElementById("incomeSection").style.display = "flex";
+        document.getElementById("referralSection").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

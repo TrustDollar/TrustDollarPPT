@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Trust Dollar - Withdrawal</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom right, #8b0000, #ffd700);
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 100%;
+        width: 95%;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        color: white;
+    }
+    .section-title {
+        background: linear-gradient(to right, #8b0000, #d2691e);
+        color: gold;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 0 #b8860b, 0 4px 10px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px black;
+        display: inline-block;
+        border-bottom: 3px solid gold;
+    }
+    .btn-3d {
+        background: linear-gradient(to bottom, gold, goldenrod);
+        color: #8b0000;
+        padding: 10px 20px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px #b8860b;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .btn-3d:active {
+        box-shadow: 0 2px #b8860b;
+        transform: translateY(3px);
+    }
+    .withdraw-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .info-box {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 15px;
+        flex: 1;
+        min-width: 250px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        color: white;
+    }
+    .info-box h2 {
+        color: gold;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+    .info-box p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+        .withdraw-boxes {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-3d">Back</a>
+    <h1 class="section-title">Withdrawal Information</h1>
+
+    <div class="withdraw-boxes">
+
+        <div class="info-box">
+            <h2>Minimum Withdrawal</h2>
+            <p>You can withdraw a minimum of <strong>$20</strong>. Make sure your wallet has enough balance.</p>
+            <h2>Maximum Withdrawal</h2>
+            <p>The maximum withdrawal per transaction is <strong>$40,000</strong> to ensure safety.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>How to Withdraw</h2>
+            <p>Select your preferred method, enter the amount, and click the 
+            <strong style="color: gold;">"Request Withdrawal"</strong> button.  
+            Ensure all details are correct to avoid <strong style="color: red;">failed transactions</strong>.</p>
+        </div>
+         
+         <div class="info-box">
+    <h2>Wallet Verification</h2>
+    <p>
+        Before making a full withdrawal, please first withdraw a small amount between 
+        <strong>$21 - $22</strong>. This ensures your wallet address is safely verified with us, 
+        making it easier for us to send your funds quickly and securely.
+    </p>
+    <p>
+        <strong>Note:</strong> For new IDs, these rules are mandatory to verify your wallet before performing any larger withdrawals. 
+        Whenever you add a new wallet address, please first make a withdrawal of <strong>$21 or $22</strong>.
+    </p>
+</div>
+
+
+        <div class="info-box">
+            <h2>Withdrawal Guidelines</h2>
+            <p>Withdrawals are processed within max..  2 to 8  hours. Double-check your wallet address before confirming.</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

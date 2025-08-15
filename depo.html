@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Trust Dollar</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom right, #8b0000, #ffd700);
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 100%;
+        width: 95%;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        color: white;
+    }
+    .section-title {
+        background: linear-gradient(to right, #8b0000, #d2691e);
+        color: gold;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 0 #b8860b, 0 4px 10px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px black;
+        display: inline-block;
+        border-bottom: 3px solid gold;
+    }
+    .btn-3d {
+        background: linear-gradient(to bottom, gold, goldenrod);
+        color: #8b0000;
+        padding: 10px 20px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px #b8860b;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .btn-3d:active {
+        box-shadow: 0 2px #b8860b;
+        transform: translateY(3px);
+    }
+    .deposit-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .info-box {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 15px;
+        flex: 1;
+        min-width: 250px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        color: white;
+    }
+    .info-box h2 {
+        color: gold;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+    .info-box p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+        .deposit-boxes {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn-3d">⬅ Back</a>
+    <h1 class="section-title">Deposit Information</h1>
+
+    <div class="deposit-boxes">
+
+        <div class="info-box">
+            <h2>Minimum Deposit</h2>
+            <p>The minimum amount to start is just <strong>$170</strong>. Perfect for beginners.</p>
+            <h2>Maximum Deposit</h2>
+            <p>You can deposit up to <strong>$20,000</strong> for maximum flexibility.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>How to Deposit</h2>
+            <p>Whenever you make a deposit, it is <strong style="color: gold;">mandatory</strong> to click on the 
+            <strong style="color: gold;">"I Have Paid"</strong> button immediately after sending the amount.  
+            If you fail to do this, your funds may be <strong style="color: red;">lost</strong>.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Deposit Guidelines</h2>
+            <p>All deposits are processed instantly. Double-check wallet address before sending funds.</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
