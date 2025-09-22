@@ -29,7 +29,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
-    .back-btn {
+    .back-btn, .view-btn {
         display: inline-block;
         background: linear-gradient(to bottom, gold, goldenrod);
         color: #8b0000;
@@ -40,10 +40,24 @@
         text-decoration: none;
         box-shadow: 0 5px #b8860b;
         margin-bottom: 20px;
+        cursor: pointer;
     }
-    .back-btn:hover {
+    .back-btn:hover, .view-btn:hover {
         box-shadow: 0 3px #b8860b;
         transform: translateY(2px);
+    }
+    /* iframe box */
+    #levelFrameBox {
+        display: none;
+        margin-top: 20px;
+    }
+    #levelFrame {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        background: white;
     }
 </style>
 </head>
@@ -51,6 +65,12 @@
 
 <div class="container">
     <a href="index.html" class="back-btn">Back</a>
+    <button class="view-btn" onclick="openLevel()">View Level</button>
+
+    <!-- iframe box -->
+    <div id="levelFrameBox">
+        <iframe id="levelFrame" src=""></iframe>
+    </div>
 
     <h1>Terms & Conditions</h1>
     <p>Welcome to TrustDollar. By using our platform, you agree to the following terms. We aim to keep our process transparent, fair, and beneficial for all members.</p>
@@ -89,6 +109,21 @@
 
     <p style="margin-top: 30px; font-size: 14px; color: #ddd;">© 2025 TrustDollar. All rights reserved.</p>
 </div>
+
+<script>
+function openLevel(){
+  const box = document.getElementById("levelFrameBox");
+  const frame = document.getElementById("levelFrame");
+
+  if(box.style.display === "none"){
+    frame.src = "level.html";  // 👉 yaha tum apna dusra page ka naam doge
+    box.style.display = "block";
+  }else{
+    box.style.display = "none";
+    frame.src = "";
+  }
+}
+</script>
 
 </body>
 </html>
