@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -109,14 +109,17 @@
 
 <h1>Level Plans</h1>
 
-<!-- ✅ User info & monthly withdrawal -->
+ <!-- ✅ User info & monthly withdrawal -->
 <div class="month-summary">
-   User: <span id="userName">Loading...</span><br>
-   This Month Withdrawals: $<span id="monthlyWithdraw">0</span>
+   User: <span id="userName">Loading...</span>
+   <hr style="border: 1px solid gold; margin: 10px 0;">
+   Gmail: <span id="userEmail">Loading...</span>
 </div>
+
 
 <!-- ✅ Multi-color button -->
 <a href="in.html" target="_blank" class="multi-btn">🚀 Increase Level</a>
+
 
 <div class="grid">
     <div class="box">
@@ -176,46 +179,29 @@
   const auth = getAuth(app);
   const db = getFirestore(app);
 
-  const monthlyWithdrawEl = document.getElementById("monthlyWithdraw");
+  
   const userNameEl = document.getElementById("userName");
 
   onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      try {
-        // ✅ Fetch user name
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-          userNameEl.textContent = userDoc.data().name || user.email;
-        } else {
-          userNameEl.textContent = user.email;
-        }
+  if (user) {
+    try {
+      const userDoc = await getDoc(doc(db, "users", user.uid));
 
-        // ✅ Start of current month
-        const now = new Date();
-        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+      const name = userDoc.exists() ? userDoc.data().name || user.email : user.email;
+      userNameEl.textContent = name;
 
-        // ✅ Withdrawals (only success, this month)
-        const q = query(
-          collection(db, "users", user.uid, "withdrawals"),
-          where("timestamp", ">=", startOfMonth),
-          where("status", "==", "success")
-        );
+      // ✅ Add Gmail/email
+      const userEmailEl = document.getElementById("userEmail");
+      userEmailEl.textContent = user.email;
 
-        const querySnapshot = await getDocs(q);
-        let total = 0;
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          if (data.amount) total += Number(data.amount);
-        });
-
-        monthlyWithdrawEl.textContent = total.toFixed(2);
-
-      } catch (err) {
-        console.error("Error fetching withdrawals:", err);
-        monthlyWithdrawEl.textContent = "Error";
-      }
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+      userNameEl.textContent = "Error";
+      document.getElementById("userEmail").textContent = "Error";
     }
-  });
+  }
+});
+
 </script>
 
 </body>
